@@ -17,7 +17,10 @@ const About = () => {
             we only Deliver fresh items from our stores and clean focused
             storage to serve the best to you{" "}
           </p>
-          <Link to='/' className="px-3 py-4 bg-theme rounded shadow-md w-44 mt-[16px] text-[20px] ">
+          <Link
+            to="/"
+            className="px-3 py-4 bg-theme rounded shadow-md w-44 mt-[16px] text-[20px] "
+          >
             ORDER NOW
           </Link>
         </div>
@@ -71,7 +74,11 @@ const About = () => {
         </h1>
         <div className="flex gap-4">
           <div className="flex w-[40%]  justify-center items-center relative">
-            <img className="absolute -z-9 scale-150" src="images/blobS.png" alt="" />
+            <img
+              className="absolute -z-9 scale-150"
+              src="images/blobS.png"
+              alt=""
+            />
             <img src="images/girl-blob.png" alt="" />
           </div>
           <div className="flex flex-col gap-8 w-[60%] overflow-auto">

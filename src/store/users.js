@@ -1,18 +1,3 @@
-// userModel 
-
-import { CgPassword } from "react-icons/cg";
-import { saveToLocal } from "../utils/storage";
-
-// {
-//   _id,
-//   name,
-//   email,
-//   password (hashed),
-//   wishlist: [productId],
-//   cart: [{ productId, quantity }],
-//   orderHistory: [orderId],
-//   createdAt
-// // }
 
 
 export const users = [

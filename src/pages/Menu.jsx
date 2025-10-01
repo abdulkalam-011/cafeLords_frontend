@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import CategoryButton from "../components/CategoryButton";
 import { useDispatch, useSelector } from "react-redux";
 import { setCategory, setSortBy } from "../features/menu/menusSlice";

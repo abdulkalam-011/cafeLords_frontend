@@ -4,7 +4,6 @@ import { toast, ToastContainer } from "react-toastify";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { Link, useNavigate } from "react-router";
-import { getFromLocal } from "../../utils/storage";
 import { login } from "../../features/auth/authSlice";
 import { setToast } from "../../features/toast/taostSlice";
 import { FaRegEye } from "react-icons/fa6";

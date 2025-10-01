@@ -1,9 +1,8 @@
-import React from "react";
+
 import { FaMapLocationDot } from "react-icons/fa6";
 import { BsFillPhoneFill } from "react-icons/bs";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { FaFacebookF } from "react-icons/fa6";
-import { Link } from "react-router";
 import { RiInstagramFill } from "react-icons/ri";
 import { FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -57,16 +56,29 @@ const Footer = () => {
             </div>
           </div>
           <div className="w-full flex justify-start gap-4 h-[30%] items-end py-5 px-9">
-            <a target="blank" href="https://instagram.com/abdulkalam_011" className="w-16 h-16 border-1 rounded-full  place text-4xl items-center flex justify-center">
+            <a
+              target="blank"
+              href="https://instagram.com/abdulkalam_011"
+              className="w-16 h-16 border-1 rounded-full  place text-4xl items-center flex justify-center"
+            >
               <FaFacebookF />
             </a>
-            <a target="blank" className="w-16 h-16 border-1 rounded-full  place text-4xl items-center flex justify-center">
+            <a
+              target="blank"
+              className="w-16 h-16 border-1 rounded-full  place text-4xl items-center flex justify-center"
+            >
               <RiInstagramFill />
             </a>{" "}
-            <a target="blank" className="w-16 h-16 border-1 rounded-full  place text-4xl items-center flex justify-center">
+            <a
+              target="blank"
+              className="w-16 h-16 border-1 rounded-full  place text-4xl items-center flex justify-center"
+            >
               <FaYoutube />
             </a>{" "}
-            <a target="blank" className="w-16 h-16 border-1 rounded-full  place text-4xl items-center flex justify-center">
+            <a
+              target="blank"
+              className="w-16 h-16 border-1 rounded-full  place text-4xl items-center flex justify-center"
+            >
               <FaXTwitter />
             </a>
           </div>
@@ -93,32 +105,29 @@ const Footer = () => {
           </div>
           <div className="  w-full h-36 mt-10 ">
             <p className="overflow-hidden h-full text-ellipsis text-[18px]">
-            <span className="font-medium">DISCLAIMER : </span>{" "}
-            
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum
-              quasi possimus officiis beatae eligendi, modi aperiam laborum
-              temporibus maiores sapiente excepturi est. Totam inventore
-              reprehenderit nobis placeat, perferendis sed, impedit a quo
-              itaque, provident aut excepturi! Debitis accusantium totam
-              dolorum, animi molestias corporis molestiae iure corrupti tempora,
-              perspiciatis fuga velit et. Eum sed excepturi vero cupiditate
-              cumque. Dignissimos nulla, quae hic atque quasi perferendis
-              voluptas repellat unde quidem, nihil ullam ipsa nemo quod error
-              aspernatur eveniet. Velit modi rerum, doloribus officia non quidem
-              assumenda harum iure hic neque, ab at?
+              <span className="font-medium">DISCLAIMER : </span> Lorem ipsum
+              dolor, sit amet consectetur adipisicing elit. Ipsum quasi possimus
+              officiis beatae eligendi, modi aperiam laborum temporibus maiores
+              sapiente excepturi est. Totam inventore reprehenderit nobis
+              placeat, perferendis sed, impedit a quo itaque, provident aut
+              excepturi! Debitis accusantium totam dolorum, animi molestias
+              corporis molestiae iure corrupti tempora, perspiciatis fuga velit
+              et. Eum sed excepturi vero cupiditate cumque. Dignissimos nulla,
+              quae hic atque quasi perferendis voluptas repellat unde quidem,
+              nihil ullam ipsa nemo quod error aspernatur eveniet. Velit modi
+              rerum, doloribus officia non quidem assumenda harum iure hic
+              neque, ab at?
             </p>
           </div>
         </div>
-      
-      
       </div>
-
-
 
       <div className="flex justify-between items-center h-8 ">
         <p>&copy; 2025 cafelords designed and developed by abdul </p>
       </div>
-      <h1 className="text-[350px] text-center logoTitle leading-[350px] font-b">CAFELORDS</h1>
+      <h1 className="text-[350px] text-center logoTitle leading-[350px] font-b">
+        CAFELORDS
+      </h1>
     </div>
   );
 };

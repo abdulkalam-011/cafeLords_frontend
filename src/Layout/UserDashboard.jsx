@@ -1,4 +1,3 @@
-import { setLocalStorage } from '../store/item'
 import Header from './Header'
 import Footer from './Footer'
 import UserRoutes from '../routes/UserRoutes'

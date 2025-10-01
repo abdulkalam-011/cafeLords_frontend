@@ -1,19 +1,18 @@
-import React, { useCallback, useState } from "react";
+import  { useCallback, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearch } from "../features/menu/menusSlice";
 import { CiSearch } from "react-icons/ci";
 
 const Search = () => {
-  const [searchval, setSearchVal] = useState('')
+  const [searchval, setSearchVal] = useState("");
   const dispatch = useDispatch();
-  const { search, category } = useSelector((state) => state.menu);
+  const { category } = useSelector((state) => state.menu);
   // const [isFocused, setIsFocused] = useState(false)
- 
 
   const handleSearch = useCallback((e) => {
     e.preventDefault();
-     e.stopPropagation();
-    
+    e.stopPropagation();
+
     dispatch(setSearch(searchval));
   });
 
@@ -27,12 +26,12 @@ const Search = () => {
           type="search"
           placeholder={`Search for ${category}`}
           value={searchval}
-          onChange={e =>{ 
-          setSearchVal(e.target.value);
-    dispatch(setSearch(e.target.value));
-            }}
+          onChange={(e) => {
+            setSearchVal(e.target.value);
+            dispatch(setSearch(e.target.value));
+          }}
         />
-        <button name='search' className="bg-gray-100 px-4 py-3 rounded-lg">
+        <button name="search" className="bg-gray-100 px-4 py-3 rounded-lg">
           <CiSearch />
         </button>
       </div>

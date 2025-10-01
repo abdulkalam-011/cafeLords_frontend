@@ -1,14 +1,12 @@
-import React, { use, useCallback } from "react";
+import { useCallback } from "react";
 import { BsCartPlusFill } from "react-icons/bs";
 import { useNavigate } from "react-router";
 import { addToCart } from "../features/cart/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 
-
-
 const ProductCard = ({ product }) => {
-  const {currentUser,isAuthenticated} = useSelector(state => state.auth)
+  const { currentUser, isAuthenticated } = useSelector((state) => state.auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -16,40 +14,41 @@ const ProductCard = ({ product }) => {
   const handleAddToCart = useCallback((e) => {
     e.stopPropagation();
     try {
-      if(isAuthenticated){ 
-      dispatch(addToCart({
-        id:Date.now(),
-        item:product,
-        quantity:1,
-        userId: currentUser.id
-      }))
-    toast.success(`${product.name} Added to cart `,  {
-      position: "bottom-center",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    })}else{
-      toast.error("Login to add items to cart", {
-        position: "bottom-center", 
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
-      setTimeout(() => {
-        navigate('/login');
-        window.scrollTo({top: 0, behavior: 'smooth'});
-      }, 3000);
-    }
-
-      
+      if (isAuthenticated) {
+        dispatch(
+          addToCart({
+            id: Date.now(),
+            item: product,
+            quantity: 1,
+            userId: currentUser.id,
+          })
+        );
+        toast.success(`${product.name} Added to cart `, {
+          position: "bottom-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+      } else {
+        toast.error("Login to add items to cart", {
+          position: "bottom-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+        setTimeout(() => {
+          navigate("/login");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 3000);
+      }
     } catch (error) {
       toast.error("Failed to add item to cart ! Please try again", {
         position: "bottom-center",
@@ -62,13 +61,13 @@ const ProductCard = ({ product }) => {
         theme: "dark",
       });
     }
-    
   });
 
   // UI
   return (
     <>
-      <div name={product.name}
+      <div
+        name={product.name}
         onClick={() => navigate(`/${product.name}`)}
         to={`/${product.name}`}
         className="w-80 h-96 pointer display-inline-block rounded-1 overflow-hidden relative shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out rounded-lg bg-product hover:border-1 hover:scale-101"
@@ -92,7 +91,8 @@ const ProductCard = ({ product }) => {
               {product.discount_percentage}% OFF
             </p>
           </div>
-          <button name="add to cart"
+          <button
+            name="add to cart"
             onClick={(e) => handleAddToCart(e)}
             className="w-16 h-16 flex justify-center items-center z-9  bg-yellow-600 rounded-full text-3xl"
           >

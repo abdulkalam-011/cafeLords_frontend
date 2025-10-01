@@ -1,6 +1,6 @@
-import React, { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { useNavigate } from "react-router";
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Loader from "../components/Loader";
 import Search from "../components/Search";
 
@@ -10,24 +10,23 @@ const MenuList = lazy(() => import("../components/Menu/MenuList"));
 const Home = () => {
   const { items } = useSelector((state) => state.menu);
   const navigate = useNavigate();
-  const {  search } = useSelector((state) => state.menu);
+  const { search } = useSelector((state) => state.menu);
 
   // set title and scroll to top
   useEffect(() => {
-      document.title = "CafeLords - Home";
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    },[]);
+    document.title = "CafeLords - Home";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
-  // getting trending now randomly 
+  // getting trending now randomly
   const randomIdxStart = Math.floor(Math.random() * items.length);
   const randomIdxEnd = randomIdxStart + 10;
   const trendingNow = items.slice(randomIdxStart, randomIdxEnd);
 
-  // getting today special randomly 
+  // getting today special randomly
   const randomStart = Math.floor(Math.random() * items.length);
   const randomend = randomStart + 5;
   const todaySpecial = items.slice(randomStart, randomend);
-
 
   // UI
   return (
@@ -59,7 +58,8 @@ const Home = () => {
                 just for you.
               </p>
               <div className="flex w-full h-full items-center  px-3 mt-10">
-                <button name="explore our menu"
+                <button
+                  name="explore our menu"
                   onClick={() => {
                     window.scrollTo({ top: 0, behavior: "smooth" });
                     navigate("/menu");
@@ -104,7 +104,10 @@ const Home = () => {
               className="absolute top-20 w-12 right-25 rotate-90 z-1"
             />
 
-            <button name="view menu" className="px-5 py-3 rounded-lg text-xl bg-theme absolute bottom-10 right-10 border-b-1 z-99 text-black">
+            <button
+              name="view menu"
+              className="px-5 py-3 rounded-lg text-xl bg-theme absolute bottom-10 right-10 border-b-1 z-99 text-black"
+            >
               View menu
             </button>
             <div className="absolute bottom-10 left-10 text-2xl text-white z-9">
@@ -115,7 +118,7 @@ const Home = () => {
         </div>
       </div>
       <div className="flex justify-center items-center mt-10">
-       <Search/>
+        <Search />
       </div>
       {search === "" ? (
         <Suspense fallback={<Loader />}>

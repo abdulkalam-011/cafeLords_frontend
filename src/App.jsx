@@ -3,9 +3,8 @@ import "./App.css";
 import Loader from "./components/Loader";
 import { lazy } from "react";
 import { toast, ToastContainer } from "react-toastify";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { setLocalStorage } from "./store/item";
-import { clearCurrentUser } from "./features/auth/authSlice";
 const UserDashboard = lazy(() => import("./Layout/UserDashboard"));
 
 const App = () => {

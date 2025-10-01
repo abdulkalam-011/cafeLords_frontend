@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router'
 
 const EmptyCart = () => {
@@ -11,7 +10,7 @@ const EmptyCart = () => {
           <p className='text-gray-500'>Your cart is empty. Start adding items to your cart!</p>
           <p >Browse Our Menu , find Items , add to cart and Happy shopping !</p>
           </div>
-         <Link className='bg-theme text-black px-3 py-2 rounded mt-4 text-xl border-b-1' to='/menu'>View Menu</Link>
+         <Link name='explore menu' className='bg-theme text-black px-3 py-2 rounded mt-4 text-xl border-b-1' to='/menu'>View Menu</Link>
         </div>
       </div>
   )

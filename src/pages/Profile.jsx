@@ -1,4 +1,3 @@
-import React from 'react'
 import SideBar from '../components/ProfileDrawer/SideBar'
 import { Route, Routes } from 'react-router'
 

@@ -1,6 +1,5 @@
-import React from 'react'
 
-const ShimmerCard = ({product}) => {
+const ShimmerCard = () => {
   return (
     <>
       <div className="w-80 h-96  display-inline-block rounded-1 overflow-hidden relative shadow-lg  transition-shadow duration-300 ease-in-out rounded-lg bg-gray-600 ">
