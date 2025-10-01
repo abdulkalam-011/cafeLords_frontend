@@ -1,32 +1,35 @@
 import React, { lazy, Suspense, useEffect } from "react";
-import { Link, useNavigate } from "react-router";
-import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router";
+import {  useSelector } from "react-redux";
 import Loader from "../components/Loader";
 import Search from "../components/Search";
-import { setCategory} from "../features/menu/menusSlice";
 
 const ProductContainer = lazy(() => import("../components/ProductContainer"));
 const MenuList = lazy(() => import("../components/Menu/MenuList"));
 
 const Home = () => {
-  const {category} = useSelector(state => state.menu)
-  
+  const { items } = useSelector((state) => state.menu);
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const { categories, search } = useSelector((state) => state.menu);
+  const {  search } = useSelector((state) => state.menu);
+
+  // set title and scroll to top
   useEffect(() => {
-     console.log(document.baseURI)
       document.title = "CafeLords - Home";
       window.scrollTo({ top: 0, behavior: "smooth" });
     },[]);
-  const { items } = useSelector((state) => state.menu);
+
+  // getting trending now randomly 
   const randomIdxStart = Math.floor(Math.random() * items.length);
   const randomIdxEnd = randomIdxStart + 10;
   const trendingNow = items.slice(randomIdxStart, randomIdxEnd);
+
+  // getting today special randomly 
   const randomStart = Math.floor(Math.random() * items.length);
   const randomend = randomStart + 5;
   const todaySpecial = items.slice(randomStart, randomend);
 
+
+  // UI
   return (
     <main className="bg-theme overflow-hidden">
       <div className="">

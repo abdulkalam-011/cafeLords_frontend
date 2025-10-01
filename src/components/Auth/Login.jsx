@@ -7,6 +7,8 @@ import { Link, useNavigate } from "react-router";
 import { getFromLocal } from "../../utils/storage";
 import { login } from "../../features/auth/authSlice";
 import { setToast } from "../../features/toast/taostSlice";
+import { FaRegEye } from "react-icons/fa6";
+import { FaRegEyeSlash } from "react-icons/fa6";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -16,13 +18,17 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [passwordError, setpasswordError] = useState('')
+  const [isText, setIsText] = useState(false)
 
     useEffect(()=>{
      if(isAuthenticated){
       navigate('/')
      }
    },[isAuthenticated])
+
+   const handleView = ()=>{
+    setIsText(prev => !prev)
+   }
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
@@ -55,25 +61,27 @@ const Login = () => {
                 <MdEmail />
                 <input
                   className="w-full h-full"
-                  type="text"
-                  placeholder="username"
+                  type="Email"
+                  placeholder="Email"
                   autoComplete="true"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
+              
               </div>
               <div className="w-full justify-between items-center bg-white  flex  h-[50px] gap-3 rounded mt-5 text-xl px-3 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-yellow-400 border-2 border-yellow-300 transition-all duration-200">
                 <RiLockPasswordFill />
                 <input
                   className="w-full"
-                  type="password"
+                  type={isText?"text": "password"}
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
+                  <button type="button" onClick={handleView}>{isText?<FaRegEye />: <FaRegEyeSlash />}</button>
               </div>
-              <p className="text-red-500">{passwordError}</p>
+              { error && <p className="text-red-500">{error}</p>}
               <div className="flex gap-3 text-xl mt-5 px-3">
                 <input type="checkbox" name="" id="" />
                 <p>
@@ -87,7 +95,6 @@ const Login = () => {
                 className="mt-10 bg-blue-700 w-full h-[50px] rounded-lg text-center text-xl text-white"
               />
             </form>
-            { error && <p className="text-red-500">{error}</p>}
             <p className="text-xl text-center mb-5">
               Don't have an account?{" "}
               <span className="text-blue-700">

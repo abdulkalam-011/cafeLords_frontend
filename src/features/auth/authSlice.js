@@ -28,7 +28,8 @@ const authSlice = createSlice({
         state.error = "Password should be at least 8 characters!";
         return;
       }
-      if(!exist){
+      const existingEmail = state.users.find(u => u.email === email)
+      if(!existingEmail){
         state.error = "user with this email is not registered!";
         return;
       }
@@ -38,7 +39,8 @@ const authSlice = createSlice({
         state.isAuthenticated = true;
         saveToLocal("currentUser", {user:state.currentUser, isAuthenticated: true});
       } else {
-        state.error = "invalid credentials!";
+        state.error = "invalid password";
+        return
       }
     },
 
@@ -77,9 +79,14 @@ const authSlice = createSlice({
       authError: (state,action) => {
         const newError = action.payload;
         state.error = newError;
+      },
+      clearCurrentUser : (state)=>{
+          state.currentUser = null
+          state.isAuthenticated = false
+          localStorage.removeItem("currentUser")
       }
     },
 });
 
-export const { login, logout, signup,authError } = authSlice.actions;
+export const { login, logout, signup,authError,clearCurrentUser } = authSlice.actions;
 export default authSlice.reducer;

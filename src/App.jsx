@@ -5,11 +5,13 @@ import { lazy } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { setLocalStorage } from "./store/item";
+import { clearCurrentUser } from "./features/auth/authSlice";
 const UserDashboard = lazy(() => import("./Layout/UserDashboard"));
 
 const App = () => {
   setLocalStorage()
   const toastState = useSelector((state) => state.toast);
+ 
   useEffect(() => {
     if (toastState.toastMessage) {
       switch (toastState.toastType) {
@@ -31,7 +33,7 @@ const App = () => {
       // Optionally clear toast after showing
       // dispatch(clearToast());
     }
-  }, [toastState.toastType, toastState.toastMessage]);
+  }, [toastState.toastType, toastState.toastMessage , ]);
 
   return (
     <>
