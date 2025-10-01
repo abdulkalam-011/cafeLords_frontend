@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Lovers+Quarrel&family=Lavishly+Your&family=Major+Mono+Display&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+
+.font-lavish {
+  font-family: "Lavishly Yours";
+  font-weight: 400;
+}
+
+
+.font-nunito {
+  font-family: "Nunito Sans";
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
+}
+.font-major {
+  font-family: "Major Mono Display", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+.font-lovers {
+  font-family: "Lovers Quarrel";
+  font-weight: 400;
+  font-style: normal;
+}
+
+input:focus{
+  outline: none;
+  border: none;
+}
+a {
+  cursor: pointer;
+}
+.price span{
+ text-decoration: line-through;
+ color: rgb(190, 182, 182);
+ font-size: 15px;
+}
+
+::selection {
+  color: #fff;
+  background-color: rgb(200, 173, 51);
+}
+.bg-theme{
+  background: #fff5ab;
+}
+
+.bg-theme-dark {
+  background-color: #342b16;
+  color: #fff;
+}
+.bg-product {
+  background-color: rgb(217, 194, 89);
+  color: #fff;
+}
+
+.line-th {
+  text-decoration: line-through;
+}

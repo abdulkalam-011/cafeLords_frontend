@@ -1,0 +1,22 @@
+.loader {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border-right: 2px solid gray;
+  animation: spinner 2s linear infinite;
+}
+
+
+@keyframes spinner {
+  0%{
+     transform: rotate(0);
+     border-style: solid;
+  }50%{
+    border-style: dotted;
+  }100%{
+     transform: rotate(360deg);
+     border-style:solid;
+  }
+  
+}
+
