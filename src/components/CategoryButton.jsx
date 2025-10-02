@@ -5,7 +5,7 @@ const CategoryButton = ({ title, handleonclick, isActive }) => {
     <NavLink
       onClick={handleonclick}
       className={`category px-3 py-2 w-full rounded-md text-xl font-md ${
-        isActive ? "bg-white text-black" : ""
+        isActive ? "bg-yellow-200 text-black" : ""
       }`}
     >
       {title}
