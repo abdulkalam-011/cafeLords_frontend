@@ -84,8 +84,8 @@ const ProductCard = ({ product }) => {
         <h2 className="text-2xl px-4 py-3">{product.name}</h2>
         <div className="w-full flex justify-between items-center px-3">
           <div className="w-[80%]">
-            <p className="px-4 text-xl font-semibold hover:text-green-500 hover:text-2xl duration-200 ease price ">
-              ₹{product.final_price} <span>₹{product.original_price}</span>
+            <p className="px-4 text-xl font-semibold duration-200 ease price relative">
+              ₹{product.final_price} <span className="text-black ml-2">₹{product.original_price}</span>
             </p>
             <p className="px-4 text-xl font-semibold text-green-500 mt-2">
               {product.discount_percentage}% OFF
