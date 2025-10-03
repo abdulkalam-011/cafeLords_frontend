@@ -1,6 +1,6 @@
-import { current } from "@reduxjs/toolkit";
 import React, { useCallback, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { MdDelete } from "react-icons/md";
 
 const PersonalInfo = () => {
   const dispatch = useDispatch();
@@ -75,7 +75,7 @@ const handleEdit = useCallback(()=>{
         </div>
       </form>
 
-      <button type="button" className="bg-red-400 px-4 py-2 rounded-lg mt-40">Delete Account</button>
+      <button type="button" className="bg-red-400 px-4 py-2 rounded-lg mt-40 flex items-center justify-between gap-2"><MdDelete />Delete Account</button>
     </div>
   );
 };

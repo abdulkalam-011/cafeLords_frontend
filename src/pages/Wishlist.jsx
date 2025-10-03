@@ -1,8 +1,16 @@
+import WishlistCard from "../components/wishListDrawer/WishlistCard"
 
 
 const Wishlist = () => {
   return (
-    <div>Wishlist</div>
+   <>
+    <WishlistCard/>
+    <WishlistCard/>
+    <WishlistCard/>
+    <WishlistCard/>
+    <WishlistCard/>
+    <WishlistCard/>
+    </>
   )
 }
 
