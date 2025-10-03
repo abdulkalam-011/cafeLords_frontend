@@ -28,7 +28,7 @@ const WishlistCard = () => {
                   12 % OFF
                 </p>
               </div>
-                <button className='text-red-800 text-2xl m-5'><MdDelete /></button>
+                <button name='remove from wishlist' className='text-red-800 text-2xl m-5'><MdDelete /></button>
             </div>
           </div>
   )
