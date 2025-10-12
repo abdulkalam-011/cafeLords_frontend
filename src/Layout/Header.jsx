@@ -22,7 +22,7 @@ const Header = () => {
           <h1 className="text-2xl font-bold">CafeLords</h1>
         </Link>
       </div>
-      <div className="flex gap-7 text-lg font-semibold uppercase ">
+      <div className="flex-center gap-7 text-lg font-semibold uppercase ">
         <NavLink
           name="go to homepage"
           to="/"

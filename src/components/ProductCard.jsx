@@ -74,8 +74,9 @@ const ProductCard = ({ product }) => {
       >
         <div className="w-full h-[65%] overflow-hidden bg-grey-100">
           {" "}
+          
           <img
-            className="w-full h-full  object-cover hover:scale-106 duration-200 ease"
+            className="w-full h-full  object-cover hover:scale-106 duration-200 bg-gray-100"
             src={product.image}
             alt={product.name.toLowerCase()}
             loading="lazy"

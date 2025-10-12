@@ -30,9 +30,9 @@ const Home = () => {
 
   // UI
   return (
-    <main className="bg-theme overflow-hidden">
+    <main className="overflow-hidden">
       <div className="">
-        <div className="w-full h-[90vh]  bg-product flex ">
+        <div className="w-full h-[90vh]  bg-theme-dark flex ">
           <div className="w-[60%] h-full   flex items-center justify-start px-30 relative">
             <div className="  text-xl ">
               <p className="text-[52px] leading-[52px] font-semibold px-4 font-lavish">
@@ -78,9 +78,9 @@ const Home = () => {
               className=" w-full h-80 relative flex items-center justify-left"
             >
               <img
-                src="/images/hero-coffee.png"
+                src="/images/hero-img_v2.png"
                 className="w-[80%] ml-10 heroImg"
-                alt=""
+                alt="hero img"
               />
             </div>
             <img

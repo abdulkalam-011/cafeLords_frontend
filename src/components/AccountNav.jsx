@@ -23,7 +23,7 @@ const AccountNav = () => {
       </Link>
       <Link
         to="/profile"
-        className="flex px-2 gap-2 bg-red-500 items-center px-2 py-1 rounded-full justify-between"
+        className="flex px-2 gap-2 bg-yellow-200 text-black items-center px-2 py-1 rounded-full justify-between"
       >
         <h1>{currentUser?.name}</h1>
         {currentUser?.profilePicture ? (
