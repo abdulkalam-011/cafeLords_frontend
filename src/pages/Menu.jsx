@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import CategoryButton from "../components/CategoryButton";
 import { useDispatch, useSelector } from "react-redux";
-import { setCategory, setSortBy } from "../features/menu/menusSlice";
+import { setCategory, setSearch, setSortBy } from "../features/menu/menusSlice";
 import CustomSelect from "../components/Menu/CustomSelect";
 import MenuList from "../components/Menu/MenuList";
 import Search from "../components/Search";
@@ -13,6 +13,7 @@ const Menu = () => {
   const [activeElement, setActiveElement] = useState("All");
 
   useEffect(() => {
+    dispatch(setSearch(''))
     document.title = "CafeLords - Menu";
     window.scrollTo({ top: 0, behavior: "smooth" });
   },[]);
