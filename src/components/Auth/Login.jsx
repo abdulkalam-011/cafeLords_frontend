@@ -20,6 +20,7 @@ const Login = () => {
   const [isText, setIsText] = useState(false)
 
     useEffect(()=>{
+      
      if(isAuthenticated){
       navigate('/')
      }
@@ -56,7 +57,7 @@ const Login = () => {
               <p>to explore cart , wishlist , favoriates and more</p>
             </span>
             <form className="w-full mb-5" onSubmit={handleLoginSubmit}>
-              <div className="w-full justify-center items-center bg-white flex  h-[50px] gap-3 rounded mt-5 text-xl px-3 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-yellow-400 border-2 border-yellow-300 transition-all duration-200">
+              <div className="w-full justify-center items-center bg-white flex  h-[50px] gap-3 mt-5 text-xl px-3 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-yellow-400 border-2 border-yellow-300 transition-all duration-200">
                 <MdEmail />
                 <input
                   className="w-full h-full"
@@ -69,7 +70,7 @@ const Login = () => {
                 />
               
               </div>
-              <div className="w-full justify-between items-center bg-white  flex  h-[50px] gap-3 rounded mt-5 text-xl px-3 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-yellow-400 border-2 border-yellow-300 transition-all duration-200">
+              <div className="w-full justify-between items-center bg-white  flex  h-[50px] gap-3 mt-5 text-xl px-3 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-yellow-400 border-2 border-yellow-300 transition-all duration-200">
                 <RiLockPasswordFill />
                 <input
                   className="w-full"

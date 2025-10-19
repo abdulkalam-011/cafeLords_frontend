@@ -6,8 +6,6 @@ const PersonalInfo = () => {
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.auth);
 
-  console.log(currentUser);
-
   const [isReadOnly, setisReadOnly] = useState(true);
   const [fullname, setfullname] = useState(currentUser.name);
   const [email, setEmail] = useState(currentUser.email);

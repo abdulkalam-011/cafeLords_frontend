@@ -25,10 +25,10 @@ const Menu = () => {
   // UI
   return (
     <>
-      <section className=" flex relative bg-gray-200  h-[100vh] gap-4">
-        <div className=" py-2 left w-[20vw] h-full sticky bg-white text-black top-0 left-0 z-10 px-3">
-          <h1 className="text-2xl  font-bold mb-5">Categories</h1>
-          <div className="flex pl-2 justify-center items-center flex-col">
+      <section className=" bg-theme flex relative">
+        <div className=" py-2 left w-[15vw] h-[100vh] sticky bg-theme-dark top-0 left-0 z-10 px-3">
+          <h1 className="text-2xl text-white font-bold mb-5">Categories</h1>
+          <div className="flex pl-2 justify-start items-start flex-col text-white">
             {categories.map((itemname, idx) => (
               <CategoryButton
                 key={idx}
@@ -39,8 +39,8 @@ const Menu = () => {
             ))}
           </div>
         </div>
-        <div className="right w-[80vw] overflow-y-auto h-full mb-5 relative ">
-          <div className="flex justify-between items-center mt-10 px-22 sticky top-0 z-999 bg-gray-200 py-2">
+        <div className="right w-[85vw] overflow-y-auto max-h-[100vh] mb-5">
+          <div className="flex justify-between items-center mt-10 px-28">
               <Search /> 
             <div>
               <CustomSelect />

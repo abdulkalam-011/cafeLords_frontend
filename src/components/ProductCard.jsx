@@ -70,7 +70,7 @@ const ProductCard = ({ product }) => {
         name={product.name}
         onClick={() => navigate(`/${product.name}`)}
         to={`/${product.name}`}
-        className="w-80 h-96 pointer display-inline-block rounded-1 overflow-hidden relative shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out rounded-lg bg-product hover:border-1 hover:scale-101"
+        className="w-[300px] h-96 pointer display-inline-block rounded-1 overflow-hidden relative shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out rounded-lg bg-product hover:border-1 hover:scale-101"
       >
         <div className="w-full h-[65%] overflow-hidden bg-grey-100">
           {" "}

@@ -3,6 +3,9 @@ import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
 import Loader from "../components/Loader";
 import Search from "../components/Search";
+import Hero from "../components/home/Hero";
+import Slider from "../components/home/Slider";
+import OrderSlider from "../components/home/OrderSlider";
 
 const ProductContainer = lazy(() => import("../components/ProductContainer"));
 const MenuList = lazy(() => import("../components/Menu/MenuList"));
@@ -31,91 +34,11 @@ const Home = () => {
   // UI
   return (
     <main className="overflow-hidden">
-      <div className="">
-        <div className="w-full h-[90vh]  bg-theme-dark flex ">
-          <div className="w-[60%] h-full   flex items-center justify-start px-30 relative">
-            <div className="  text-xl ">
-              <p className="text-[52px] leading-[52px] font-semibold px-4 font-lavish">
-                Start your day with fresh
-              </p>
-              <h1 className="text-[200px] leading-[200px] font-bold  z-99 font-nunito">
-                COFFEE
-              </h1>
-              <img
-                src="/images/coffee-bean.png"
-                alt="coffe-bean "
-                className="absolute top-60 w-10 right-80 z-9 opacity-35"
-              />
-              <img
-                src="/images/coffee-bean.png"
-                alt="coffe-bean "
-                className="absolute top-60 w-12 right-85 rotate-90 z-1 opacity-35"
-              />
-              <p className="px-3 font-[16px] leading-[24px]">
-                Enjoy Handcarated bevrages and freshly backed Snacks without
-                living your comfort zone.Browse Our curated menu and get
-                everthing delivered with smooth and Interactive experience made
-                just for you.
-              </p>
-              <div className="flex w-full h-full items-center  px-3 mt-10">
-                <button
-                  name="explore our menu"
-                  onClick={() => {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                    navigate("/menu");
-                  }}
-                  className="ml-5 rounded-lg px-5 py-3 text-center bg-theme text-black border-b-1 border-b-white hover:opacity-100"
-                >
-                  ORDER NOW
-                </button>
-              </div>
-            </div>
-          </div>
+      <Hero />
+      <OrderSlider/>
+      <div className="px-[100px] mt-10">
 
-          <div className="w-[40%] h-full relative  flex items-center justify-center">
-            <div
-              id="heroImageBox"
-              className=" w-full h-80 relative flex items-center justify-left"
-            >
-              <img
-                src="/images/hero-img_v2.png"
-                className="w-[80%] ml-10 heroImg"
-                alt="hero img"
-              />
-            </div>
-            <img
-              src="/images/coffee-bean.png"
-              alt="coffe-bean "
-              className="absolute bottom-20 w-10 left-20 z-9"
-            />
-            <img
-              src="/images/coffee-bean.png"
-              alt="coffe-bean "
-              className="absolute bottom-20 w-12 left-25 rotate-90 z-1"
-            />
-            <img
-              src="/images/coffee-bean.png"
-              alt="coffe-bean "
-              className="absolute top-20 w-10 right-20 z-9"
-            />
-            <img
-              src="/images/coffee-bean.png"
-              alt="coffe-bean "
-              className="absolute top-20 w-12 right-25 rotate-90 z-1"
-            />
-
-            <button
-              name="view menu"
-              className="px-5 py-3 rounded-lg text-xl bg-theme absolute bottom-10 right-10 border-b-1 z-99 text-black"
-            >
-              View menu
-            </button>
-            <div className="absolute bottom-10 left-10 text-2xl text-white z-9">
-              <h1 className="text-4xl font-bold">CafeLords</h1>
-              <p className="text-lg">The best place to enjoy your coffee</p>
-            </div>
-          </div>
-        </div>
+      <Slider/>
       </div>
       <div className="flex justify-center items-center mt-10">
         <Search />

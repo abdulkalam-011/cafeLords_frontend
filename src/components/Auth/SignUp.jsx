@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaUser } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
@@ -25,11 +25,14 @@ const SignUp = () => {
   const [errorP, seterrorP] = useState("");
   const [errorEmail, seterrorEmail] = useState("");
 
+  useEffect(()=>{
+    dispatch(authError(null))
+    document.title = 'Cafelord-Signup'
+  })
   // handlers
   const handleView = () => {
     setIsText((prev) => !prev);
   };
-
   const handleSignUp = (e) => {
     e.preventDefault();
     if (fullname.length < 5) {
@@ -62,7 +65,7 @@ const SignUp = () => {
   // UI
   return (
     <>
-      <section className="p-10 w-full  flex-center bg-[#ffe]">
+      <section className="p-10 w-full  flex-center bg-[#ffe] overflow-hidden">
         <div className="shadow-md w-full min-h-[80vh] rounded-xl bg-white flex justify-center itmes-center gap-5 flex-wrap">
           <div className="rigth bg-theme w-[450px] h-[80vh] text-center flex justify-center flex-col overflow-hidden">
             <img className="scale-200" src="images/logo.png" alt="logo" />
@@ -70,7 +73,7 @@ const SignUp = () => {
               <b>CAFELORDS</b>
             </h1>
           </div>
-          <div className="left rounded w-[480px] h-[80vh] p-5 flex flex-col">
+          <div className="left rounded w-[480px] h-[80vh] p-5 flex flex-col overflow-y-auto">
             <span>
               <h1 className="text-4xl ">
                 <b>SignUp</b>
@@ -92,7 +95,7 @@ const SignUp = () => {
                   onChange={(e) => setfullname(e.target.value)}
                 />
               </div>
-              <div className="w-full justify-center items-center bg-white flex  h-[50px] gap-3 rounded mt-5 text-xl px-3 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-yellow-400 border-2 border-yellow-300 transition-all duration-200">
+              <div className="w-full justify-center items-center bg-white flex  h-[50px] gap-3  mt-5 text-xl px-3 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-yellow-400 border-2 border-yellow-300 transition-all duration-200">
                 <MdEmail />
                 <input
                   className="w-full h-full"
@@ -105,7 +108,7 @@ const SignUp = () => {
                 />
               </div>
               <p>{errorEmail}</p>
-              <div className="w-full justify-between items-center bg-white  flex  h-[50px] gap-3 rounded mt-5 text-xl px-3 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-yellow-400 border-2 border-yellow-300 transition-all duration-200">
+              <div className="w-full justify-between items-center bg-white  flex  h-[50px] gap-3 mt-5 text-xl px-3 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-yellow-400 border-2 border-yellow-300 transition-all duration-200">
                 <RiLockPasswordFill />
                 <input
                   className="w-full"
@@ -117,7 +120,7 @@ const SignUp = () => {
                 />
               </div>
               <div
-                className={`w-full justify-between items-center bg-white px-3 flex  h-[50px] gap-3 rounded mt-5 text-xl px-3 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-yellow-400 border-2 border-yellow-300 transition-all duration-200`}
+                className={`w-full justify-between items-center bg-white px-3 flex  h-[50px] gap-3  mt-5 text-xl rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-yellow-400 border-2 border-yellow-300 transition-all duration-200`}
               >
                 <RiLockPasswordFill />
                 <input
@@ -149,10 +152,10 @@ const SignUp = () => {
               <input
                 type="submit"
                 value="Submit"
-                className="mt-10 bg-blue-700 w-full h-[50px] rounded-lg text-center text-xl text-white"
+                className="mt-5 bg-blue-700 w-full h-[50px] rounded-lg text-center text-xl text-white"
               />
             </form>
-            <p className="text-xl text-center mb-5">
+            <p className="text-xl text-center mb-2">
               Already have an account?{" "}
               <span className="text-blue-700">
                 <Link to="/login">Login</Link>

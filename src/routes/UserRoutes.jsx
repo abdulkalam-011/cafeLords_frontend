@@ -2,12 +2,13 @@ import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router";
 import Home from "../pages/Home";
 import Loader from "../components/Loader";
-import ProtectedRoutes from "./ProtectedRoutes";
-import PersonalInfo from "../components/ProfileDrawer/PersonalInfo";
-import SavedAdress from "../components/ProfileDrawer/SavedAdress";
-import Orders from "../components/ProfileDrawer/Orders";
-import Reviews from "../components/ProfileDrawer/Reviews";
-import Notificaltion from "../components/ProfileDrawer/Notificaltion";
+
+const ProtectedRoutes = lazy(()=> import("./ProtectedRoutes"));
+const PersonalInfo = lazy(()=>import("../components/ProfileDrawer/PersonalInfo")) ;
+const SavedAdress = lazy(()=> import("../components/ProfileDrawer/SavedAdress"));
+const Orders = lazy(()=> import("../components/ProfileDrawer/Orders")) ;
+const Reviews = lazy(()=> import( "../components/ProfileDrawer/Reviews"));
+const Notificaltion = lazy(()=>import( "../components/ProfileDrawer/Notificaltion"));
 
 const Menu = lazy(() => import("../pages/Menu"));
 const About = lazy(() => import("../pages/About"));

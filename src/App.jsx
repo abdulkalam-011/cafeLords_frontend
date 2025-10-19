@@ -5,11 +5,19 @@ import { lazy } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { useSelector } from "react-redux";
 import { setLocalStorage } from "./store/item";
+import { useNavigate } from "react-router";
 const UserDashboard = lazy(() => import("./Layout/UserDashboard"));
 
 const App = () => {
+  const navigat = useNavigate()
   setLocalStorage()
   const toastState = useSelector((state) => state.toast);
+
+  window.addEventListener("keydown",(key)=>{
+    if(key.key==='k'){
+      navigat('/cart')
+    }
+  })
  
   useEffect(() => {
     if (toastState.toastMessage) {
