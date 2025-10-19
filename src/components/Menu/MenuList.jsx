@@ -1,6 +1,7 @@
 import React, { lazy, Suspense, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 
+
 const ProductCard = lazy(() => import("../ProductCard"));
 
 const MenuList = () => {
