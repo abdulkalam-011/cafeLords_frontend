@@ -55,16 +55,18 @@ const authSlice = createSlice({
 
     signup: (state, action) => {
       const user = action.payload;
+       const { email, password } = action.payload;
       const exist = state.users.find((u) => u.email === user.email);
 
       const emailRegx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       const passRegx = /^.{8,}$/;
+      
 
-      if (!emailRegx.test(user.email)) {
+      if (!emailRegx.test(email)) {
         state.error = "Invalid email format!";
         return;
       }
-      if (!passRegx.test(user.password)) {
+      if (!passRegx.test(password)) {
         state.error = "Password should be at least 8 characters!";
         return;
       }

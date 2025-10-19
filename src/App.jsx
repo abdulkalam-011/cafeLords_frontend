@@ -13,12 +13,6 @@ const App = () => {
   setLocalStorage()
   const toastState = useSelector((state) => state.toast);
 
-  window.addEventListener("keydown",(key)=>{
-    if(key.key==='k'){
-      navigat('/cart')
-    }
-  })
- 
   useEffect(() => {
     if (toastState.toastMessage) {
       switch (toastState.toastType) {

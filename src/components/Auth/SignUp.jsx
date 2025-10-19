@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router";
 import { FaGoogle } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import { setToast } from "../../features/toast/taostSlice";
-import { ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import { authError, signup } from "../../features/auth/authSlice";
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
@@ -28,7 +28,7 @@ const SignUp = () => {
   useEffect(()=>{
     dispatch(authError(null))
     document.title = 'Cafelord-Signup'
-  })
+  },[])
   // handlers
   const handleView = () => {
     setIsText((prev) => !prev);
@@ -37,6 +37,9 @@ const SignUp = () => {
     e.preventDefault();
     if (fullname.length < 5) {
       dispatch(authError("name should be atleast 5 characters"));
+      return;
+    }else if (password.length < 5) {
+      dispatch(authError("password should be 8 characters long "));
       return;
     } else if (password !== confirmPassword) {
       dispatch(authError("password must be same"));
@@ -54,12 +57,22 @@ const SignUp = () => {
         profilePicture: "",
       };
       dispatch(signup(newUser));
+       toast.success(`signup successfull `, {
+                position: "bottom-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+              });
       dispatch(setToast({ type: "success", message: "SignUP Successfull" }));
       setfullname("");
       setEmail("");
       setPassword("");
       setconfirmPassword("");
-      navigate("/login");
+      navigate('/login')
     }
   };
   // UI
@@ -93,13 +106,14 @@ const SignUp = () => {
                   required
                   value={fullname}
                   onChange={(e) => setfullname(e.target.value)}
+                 focus
                 />
               </div>
               <div className="w-full justify-center items-center bg-white flex  h-[50px] gap-3  mt-5 text-xl px-3 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-yellow-400 border-2 border-yellow-300 transition-all duration-200">
                 <MdEmail />
                 <input
                   className="w-full h-full"
-                  type="text"
+                  type="email"
                   placeholder="Email"
                   autoComplete="true"
                   required
@@ -117,6 +131,7 @@ const SignUp = () => {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  autoComplete="new-password"
                 />
               </div>
               <div

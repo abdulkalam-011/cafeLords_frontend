@@ -78,6 +78,7 @@ const Login = () => {
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  autoComplete="new-password"
                 />
                   <button type="button" onClick={handleView}>{isText?<FaRegEye />: <FaRegEyeSlash />}</button>
               </div>

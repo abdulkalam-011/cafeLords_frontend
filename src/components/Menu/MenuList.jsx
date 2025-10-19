@@ -1,6 +1,5 @@
 import React, { lazy, Suspense, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
-import ShimmerCard from "../shimmerCard";
 
 const ProductCard = lazy(() => import("../ProductCard"));
 
