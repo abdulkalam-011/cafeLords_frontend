@@ -94,14 +94,21 @@ const About = () => {
               coffee so good it changed everything. I knew right then I wanted
               to bring that same passion for quality and community back home to
               Ayodhya. After a year of searching for the perfect space and
-              countless late nights perfecting our recipes, Cafelords opened
-              its doors in 2023.
+              countless late nights perfecting our recipes, Cafelords opened its
+              doors in 2023.
             </p>
-            <p className="text-[18px] leading-snug mt-2 text-justify opacity-20 font-lovers italic">Abdul Kalam - Founder</p>
+            <p className="text-[18px] leading-snug mt-2 text-justify opacity-20 font-lovers italic">
+              Abdul Kalam - Founder
+            </p>
           </div>
         </div>
         <div className=" h-full flex-center w-2/4 px-20">
-          <img src="images\girl-blob.png" alt="girl img" width="80%" loading="lazy"/>
+          <img
+            src="https://imgs.search.brave.com/rFgHeZiZNsAkXbPOUaGjWb7lIaLcUhaMSZGlB99xnFQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG5p/Lmljb25zY291dC5j/b20vaWxsdXN0cmF0/aW9uL3ByZW1pdW0v/dGh1bWIvY29mZmVl/LXNob3AtaWxsdXN0/cmF0aW9uLWRvd25s/b2FkLWluLXN2Zy1w/bmctZ2lmLWZpbGUt/Zm9ybWF0cy0tY2Fm/ZS1hcmVhLWJhci1i/dWlsZGluZy1wYWNr/LWZvb2QtZHJpbmst/aWxsdXN0cmF0aW9u/cy01MzI1NjgxLnBu/Zw"
+            alt="girl img"
+            width="80%"
+            loading="lazy"
+          />
         </div>
       </section>
 
@@ -209,34 +216,71 @@ const About = () => {
       <div class=" pb-30">
         <div className="flex-center flex-col mt-10">
           <h1 className="text-2xl text-yellow-400  uppercase leading-snug">
-             Team members
-            </h1>
-             <h2 className="text-4xl font-bold opacity-80 leading-snug">
-             Meet to the Souls of CafeLords
-            </h2>
+            Team members
+          </h1>
+          <h2 className="text-4xl font-bold opacity-80 leading-snug">
+            Meet to the Souls of CafeLords
+          </h2>
         </div>
         <div className="flex justify-evenly items-center  h-full mt-15">
           <div className="w-100 h-120  flex justify-between items-center flex-col">
-            <div className="w-full h-[80%] bg-gray-100 rounded-xl"></div>
-            <div className="p-6">
-            <h1 className="text-2xl text-center font-lavish leading-relaxed">Pradeep Singh</h1>
-            <p className="text-[16px] opacity-70 text-center leading-snug">Head of the Chef</p>
+            <div className="w-full h-[80%] bg-gray-100 rounded-xl">
+
+              <img
+                className="w-full h-full object-cover rounded-xl"
+                src="https://imgs.search.brave.com/H3NV7HcvJKlTQoXSkSdQncKjq2DCwJr6Y8iB28WzHTg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9waG90by1wcm9m/ZXNzaW9uYWwtY2hl/Zl84ODkyMjctMzgy/MjIuanBnP3NlbXQ9/YWlzX2h5YnJpZCZ3/PTc0MCZxPTgw" alt="rohan"
+                width="100%"
+                height="100%"
+              />
+
             </div>
-          </div> 
+            <div className="p-6">
+              <h1 className="text-2xl text-center font-lavish leading-relaxed">
+                Pradeep Singh
+              </h1>
+              <p className="text-[16px] opacity-70 text-center leading-snug">
+                Head of the Chef
+              </p>
+            </div>
+          </div>
           <div className="w-100 h-120  flex justify-between items-center flex-col">
-            <div className="w-full h-[80%] bg-gray-100 rounded-xl"></div>
-            <div className="p-6">
-            <h1 className="text-2xl text-center font-lavish leading-relaxed">Amandeep Bhatia</h1>
-            <p className="text-[16px] opacity-70 text-center leading-snug">Dessert & Drink Expert</p>
+            <div className="w-full h-[80%] bg-gray-100 rounded-xl">
+              <img
+                className="w-full h-full object-cover rounded-xl"
+                src="https://imgs.search.brave.com/LLSl5aw8OWQvgl9RQCMlAe6R2eHgt3mT54hr3D_3xHI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cy4x/MjNyZi5jb20vNDUw/d20vZG9sZ2FjaG92/L2RvbGdhY2hvdjE5/MDMvZG9sZ2FjaG92/MTkwMzAyMjY5LzEx/OTU2NTU5Mi1jb29r/aW5nLXByb2Zlc3Np/b24tYW5kLXBlb3Bs/ZS1jb25jZXB0LWhh/cHB5LW1hbGUtaW5k/aWFuLWNoZWYtaW4t/dG9xdWUtb3Zlci1n/cmV5LWJhY2tncm91/bmQuanBnP3Zlcj02"
+                alt="rohan"
+                width="100%"
+                height="100%"
+              />
             </div>
-          </div> 
+            <div className="p-6">
+              <h1 className="text-2xl text-center font-lavish leading-relaxed">
+                Amandeep Bhatia
+              </h1>
+              <p className="text-[16px] opacity-70 text-center leading-snug">
+                Dessert & Drink Expert
+              </p>
+            </div>
+          </div>
           <div className="w-100 h-120  flex justify-between items-center flex-col">
-            <div className="w-full h-[80%] bg-gray-100 rounded-xl"></div>
-            <div className="p-6">
-            <h1 className="text-2xl text-center font-lavish leading-relaxed">Rohan Tyagi</h1>
-            <p className="text-[16px] opacity-70 text-center leading-snug">Executive Chef</p>
+            <div className="w-full h-[80%] bg-gray-100 rounded-xl">
+              <img
+                className="w-full h-full object-cover rounded-xl"
+                src="https://imgs.search.brave.com/eUfXRZVWmeYrEv5KCSwT6zAS2-2l9_Oy7zwHjqQdth0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9oYXBweS1tYWxl/LWluZGlhbi1jaGVm/LXRvcXVlXzEyNTcy/MjMtMTA0NTQxLmpw/Zz9zZW10PWFpc19o/eWJyaWQmdz03NDAm/cT04MA"
+                alt="rohan"
+                width="100%"
+                height="100%"
+              />
             </div>
-          </div> 
+            <div className="p-6">
+              <h1 className="text-2xl text-center font-lavish leading-relaxed">
+                Rohan Tyagi
+              </h1>
+              <p className="text-[16px] opacity-70 text-center leading-snug">
+                Executive Chef
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
