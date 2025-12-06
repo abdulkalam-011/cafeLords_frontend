@@ -5,10 +5,10 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-  const { isAuthenticated, currentUser } = useSelector((state) => state.auth);
+  const { isAuthenticated} = useSelector((state) => state.auth);
 
   return (
-    <div className=" h-[10vh] flex justify-between items-center py-4 px-10 shadow-md gap-10 bg-theme-dark relative sticky top-0 z-99990 overflow-hidden">
+    <div className=" h-[10vh] flex justify-between items-center py-4 px-10 shadow-md gap-10 bg-theme-dark sticky top-0 z-99990 overflow-hidden">
       <div className="relative">
         <Link
           to="/"

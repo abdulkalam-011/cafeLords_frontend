@@ -1,5 +1,4 @@
 import { lazy, Suspense, useEffect } from "react";
-import { useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../components/Loader";
 import Search from "../components/Search";
@@ -12,7 +11,7 @@ const ProductContainer = lazy(() => import("../components/ProductContainer"));
 const MenuList = lazy(() => import("../components/Menu/MenuList"));
 
 const Home = () => {
-  const navigate = useNavigate();
+ 
   const dispatch = useDispatch()
   const { items } = useSelector((state) => state.menu);
   const { search } = useSelector((state) => state.menu);
@@ -23,7 +22,7 @@ const Home = () => {
     dispatch(setCategory('All'))
     document.title = "CafeLords - Home";
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+  }, [dispatch]);
 
   // getting trending now randomly
   const randomIdxStart = Math.floor(Math.random() * items.length);

@@ -5,13 +5,22 @@ import { lazy } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { useSelector } from "react-redux";
 import { setLocalStorage } from "./store/item";
-import { useNavigate } from "react-router";
 const UserDashboard = lazy(() => import("./Layout/UserDashboard"));
 
 const App = () => {
-  const navigat = useNavigate()
+  
+
+ const menu = localStorage.getItem("cafeMenu")
+  console.log(menu)
+
+  if(!menu){
+    location.reload()
+  }
+  
   setLocalStorage()
   const toastState = useSelector((state) => state.toast);
+  
+
 
   useEffect(() => {
     if (toastState.toastMessage) {

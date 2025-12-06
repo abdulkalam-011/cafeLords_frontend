@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect, useRef } from "react";
+import React, { lazy } from "react";
 import { useSelector } from "react-redux";
 
 
@@ -8,6 +8,9 @@ const MenuList = () => {
   const { search, category, items, sortBy } = useSelector(
     (state) => state.menu
   );
+  if(!items){
+    location.reload()
+  }
   let filteredItems = [...items].filter(
     (item) =>
       item.name.toLowerCase().includes(search.toLowerCase()) &&
@@ -23,7 +26,7 @@ const MenuList = () => {
     <>
       <section className="flex items-start flex-wrap justify-center gap-4 gap-y-8  py-8 w-full h-full">
         {filteredItems.length > 0 ? (
-          filteredItems.map((item, idx) => (
+          filteredItems.map((item) => (
             <ProductCard key={item.id} product={item} />
           ))
         ) : (
