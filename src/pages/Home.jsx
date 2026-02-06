@@ -2,10 +2,11 @@ import { lazy, Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../components/Loader";
 import Search from "../components/Search";
-import Hero from "../components/home/Hero";
+
 import Slider from "../components/home/Slider";
-import OrderSlider from "../components/home/OrderSlider";
+
 import { setCategory, setSearch } from "../features/menu/menusSlice";
+import Categories from "../components/home/Categories";
 
 const ProductContainer = lazy(() => import("../components/ProductContainer"));
 const MenuList = lazy(() => import("../components/Menu/MenuList"));
@@ -13,8 +14,8 @@ const MenuList = lazy(() => import("../components/Menu/MenuList"));
 const Home = () => {
  
   const dispatch = useDispatch()
-  const { items } = useSelector((state) => state.menu);
-  const { search } = useSelector((state) => state.menu);
+  const { items ,search, category } = useSelector((state) => state.menu);
+
 
   // set title and scroll to top
   useEffect(() => {
@@ -36,17 +37,12 @@ const Home = () => {
 
   // UI
   return (
-    <main className="overflow-hidden">
-      <Hero />
-      <OrderSlider/>
-      <div className="px-[100px] mt-10">
-
+    <main className="overflow-hidden pb-10">
+      {/* <Hero />
+      <OrderSlider/> */}
       <Slider/>
-      </div>
-      <div className="flex justify-center items-center mt-10">
-        <Search />
-      </div>
-      {search === "" ? (
+      <Categories />
+      {search === "" && category== "All"? (
         <Suspense fallback={<Loader />}>
           <ProductContainer
             productTagTitle="Today Special"

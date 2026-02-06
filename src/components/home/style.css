@@ -25,3 +25,34 @@
   height: 100%;
   object-fit: cover;
 }
+
+
+/* Swiper Arrow Customization */
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+  transform: scale(0.7); /* Smaller on mobile */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+@media (min-width: 768px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    transform: scale(1); /* Normal size on desktop */
+  }
+}
+
+/* Pagination Dots */
+.swiper-pagination-bullet {
+  background: white !important;
+  opacity: 0.5;
+  width: 10px;
+  height: 10px;
+}
+
+.swiper-pagination-bullet-active {
+  background: #C19A6B !important; /* Your Theme Gold/Brown */
+  opacity: 1;
+  width: 25px; /* Long pill shape for active */
+  border-radius: 12px;
+}

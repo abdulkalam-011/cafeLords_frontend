@@ -5,7 +5,7 @@ const ProductContainer = ({ productTagTitle, data }) => {
   // UI
   return (
     <>
-      <div className="  px-14 pb-20">
+      <div className="px-3  md:px-14 overflow-y-hidden">
         <h1 className=" uppercase w-full text-2xl font-medium productTagTitle mb-8 text-center mt-10">
           {productTagTitle}
         </h1>

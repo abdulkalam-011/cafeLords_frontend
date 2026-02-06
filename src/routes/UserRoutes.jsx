@@ -38,7 +38,8 @@ const UserRoutes = () => {
           <Route path="/:product" element={<ProductPage />} />,
           <Route element={<ProtectedRoutes />}>
             <Route path="/profile" element={<Profile />}>
-               <Route index element={<PersonalInfo/>}/>,
+               <Route index element={<Profile/>}/>,
+               <Route path="personal-info" element={<PersonalInfo/>}/>,
                <Route path="address" element={<SavedAdress/>}/>,
                <Route path="orders" element={<Orders/>}/>,
                <Route path="reviews" element={<Reviews/>}/>,

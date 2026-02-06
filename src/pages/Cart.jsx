@@ -11,7 +11,7 @@ const Cart = () => {
   useEffect(() => {
     document.title = `cafelords | Cart (${items.length})`;
     window.scrollTo({top: 0, behavior: 'smooth'});
-  }, []);
+  }, [items]);
 
  const handlePurchaseAll = useCallback(()=>{
   if (items.length === 0) {
@@ -20,7 +20,7 @@ const Cart = () => {
   }
   alert("Thank you for your purchase!");
   console.log("Purchased items:", items);
- })
+ },[items])
 
   // UI
   return (

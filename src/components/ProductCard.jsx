@@ -10,7 +10,6 @@ const ProductCard = ({ product }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  // Function to handle adding item to cart
   const handleAddToCart = useCallback((e) => {
     e.stopPropagation();
     try {
@@ -26,22 +25,12 @@ const ProductCard = ({ product }) => {
         toast.success(`${product.name} Added to cart `, {
           position: "bottom-center",
           autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: false,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
           theme: "dark",
         });
       } else {
         toast.error("Login to add items to cart", {
           position: "bottom-center",
           autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: false,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
           theme: "dark",
         });
         setTimeout(() => {
@@ -50,52 +39,57 @@ const ProductCard = ({ product }) => {
         }, 3000);
       }
     } catch (error) {
-      toast.error("Failed to add item to cart ! Please try again", {
+      toast.error(`failed to add items to cart due to ${error.message}`, {
         position: "bottom-center",
         autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
         theme: "dark",
       });
     }
-  });
+  }, [dispatch, isAuthenticated, currentUser, navigate, product]);
 
-  // UI
   return (
     <>
       <div
         name={product.name}
         onClick={() => navigate(`/${product.name}`)}
-        to={`/${product.name}`}
-        className="w-[300px] h-96 pointer display-inline-block rounded-1 overflow-hidden relative shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out rounded-lg bg-product hover:border-1 hover:scale-101"
+        // ---------------------------------------------------------------------------
+        // FIXED PIXEL WIDTHS:
+        // 1. w-[170px]: Fits 2 cards nicely on small phones (360px+) with gaps.
+        // 2. md:w-[300px]: Fits ~4.5 cards on typical 1440px desktops.
+        // 3. shrink-0: CRITICAL. Prevents flex containers from squishing your fixed pixels.
+        // 4. inline-block: Ensures correct behavior if parent is block.
+        // ---------------------------------------------------------------------------
+        className="shrink-0 w-[170px] md:w-[300px] h-72 md:h-96 cursor-pointer inline-block align-top rounded-lg overflow-hidden relative shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out bg-white hover:border-gray-300 hover:scale-[1.01] mx-1 md:mx-3 mb-4"
       >
-        <div className="w-full h-[65%] overflow-hidden bg-grey-100">
-          {" "}
-          
+        <div className="w-full h-[60%] md:h-[65%] overflow-hidden bg-gray-100">
           <img
-            className="w-full h-full  object-cover hover:scale-106 duration-200 bg-gray-100"
+            className="w-full h-full object-cover hover:scale-110 duration-200"
             src={product.image}
             alt={product.name.toLowerCase()}
             loading="lazy"
           />
         </div>
-        <h2 className="text-2xl px-4 py-3">{product.name}</h2>
-        <div className="w-full flex justify-between items-center px-3">
-          <div className="w-[80%]">
-            <p className="px-4 text-xl font-semibold duration-200 ease price relative">
-              ₹{product.final_price} <span className="text-black ml-2">₹{product.original_price}</span>
+        
+        <h2 className="text-sm md:text-2xl px-2 md:px-4 py-2 truncate font-medium">
+          {product.name}
+        </h2>
+
+        <div className="w-full flex justify-between items-center px-2 md:px-3">
+          <div className="flex flex-col">
+            <p className="text-sm md:text-xl font-semibold text-gray-800">
+              ₹{product.final_price}
+              <span className="text-gray-400 line-through text-xs md:text-base ml-1">
+                ₹{product.original_price}
+              </span>
             </p>
-            <p className="px-4 text-xl font-semibold text-green-500 mt-2">
+            <p className="text-xs md:text-sm font-bold text-green-600">
               {product.discount_percentage}% OFF
             </p>
           </div>
+
           <button
-            name="add to cart"
             onClick={(e) => handleAddToCart(e)}
-            className="w-16 h-16 flex justify-center items-center z-9  bg-yellow-600 rounded-full text-3xl"
+            className="w-8 h-8 md:w-14 md:h-14 flex justify-center items-center bg-yellow-600 rounded-full text-white text-lg md:text-2xl hover:bg-yellow-500 transition-colors shadow-md"
           >
             <BsCartPlusFill />
           </button>
@@ -105,13 +99,6 @@ const ProductCard = ({ product }) => {
       <ToastContainer
         position="bottom-center"
         autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick={false}
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
         theme="dark"
       />
     </>

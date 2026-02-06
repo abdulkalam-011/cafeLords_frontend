@@ -8,19 +8,13 @@ import { setLocalStorage } from "./store/item";
 const UserDashboard = lazy(() => import("./Layout/UserDashboard"));
 
 const App = () => {
-  
+  const menu = localStorage.getItem("cafeMenu");
 
- const menu = localStorage.getItem("cafeMenu")
-  console.log(menu)
-
-  if(!menu){
-    location.reload()
+  if (!menu) {
+    location.reload();
   }
-  
-  setLocalStorage()
+  setLocalStorage();
   const toastState = useSelector((state) => state.toast);
-  
-
 
   useEffect(() => {
     if (toastState.toastMessage) {
@@ -43,7 +37,7 @@ const App = () => {
       // Optionally clear toast after showing
       // dispatch(clearToast());
     }
-  }, [toastState.toastType, toastState.toastMessage , ]);
+  }, [toastState.toastType, toastState.toastMessage]);
 
   return (
     <>
