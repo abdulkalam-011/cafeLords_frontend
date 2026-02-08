@@ -52,16 +52,10 @@ const ProductCard = ({ product }) => {
       <div
         name={product.name}
         onClick={() => navigate(`/${product.name}`)}
-        // ---------------------------------------------------------------------------
-        // FIXED PIXEL WIDTHS:
-        // 1. w-[170px]: Fits 2 cards nicely on small phones (360px+) with gaps.
-        // 2. md:w-[300px]: Fits ~4.5 cards on typical 1440px desktops.
-        // 3. shrink-0: CRITICAL. Prevents flex containers from squishing your fixed pixels.
-        // 4. inline-block: Ensures correct behavior if parent is block.
-        // ---------------------------------------------------------------------------
-        className="shrink-0 w-[170px] md:w-[300px] h-72 md:h-96 cursor-pointer inline-block align-top rounded-lg overflow-hidden relative shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out bg-white hover:border-gray-300 hover:scale-[1.01] mx-1 md:mx-3 mb-4"
+        
+        className="shrink-0 w-[170px] md:w-[300px] h-68 md:h-100 cursor-pointer inline-block align-top rounded-lg overflow-hidden relative shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out bg-white hover:border-gray-300 hover:scale-[1.01] mx-1 md:mx-3 mb-4"
       >
-        <div className="w-full h-[60%] md:h-[65%] overflow-hidden bg-gray-100">
+        <div className="w-full h-[70%] md:h-[70%] overflow-hidden bg-gray-100">
           <img
             className="w-full h-full object-cover hover:scale-110 duration-200"
             src={product.image}

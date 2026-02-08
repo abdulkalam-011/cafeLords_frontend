@@ -1,0 +1,22 @@
+User-agent: *
+# Allow public pages
+Allow: /
+Allow: /menu
+Allow: /about
+Allow: /check-in
+
+# Block Auth pages (no SEO value)
+Disallow: /login
+Disallow: /signup
+
+# Block User specific pages (Protected Routes)
+Disallow: /profile/
+Disallow: /cart
+Disallow: /wishlist
+
+# Block Search Results (SEO Best Practice to prevent duplicate content)
+Disallow: /search
+Disallow: /*?q=
+
+# Sitemap location (Replace with your actual domain)
+Sitemap: https://cafelords.netlify.app/sitemap.xml

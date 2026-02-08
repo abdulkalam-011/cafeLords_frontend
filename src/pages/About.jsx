@@ -10,8 +10,6 @@ const About = () => {
   React.useEffect(() => {
     document.title = "CafeLords - About";
     window.scrollTo({ top: 0, behavior: "smooth" });
-
-    // href="https://www.google.com/maps/dir//Radha+Ratna+Restaurant+and+Rooms,+Ram+Path+Rd,+near+Lata+Mangeshkar+Chowk,+Nayaghat,+Theri+Bazar,+Ayodhya,+Uttar+Pradesh+224123/@25.4509056,81.8479104,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x399a075cfdf26fff:0x843dd1fcbe6e4c88!2m2!1d82.2086975!2d26.8069496?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D"
   });
   return (
     <section className="text-black">

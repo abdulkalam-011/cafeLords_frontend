@@ -34,29 +34,27 @@ const Header = () => {
     <header className="h-[10vh] flex justify-between items-center py-4 px-4 md:px-10 shadow-md bg-theme-dark sticky top-0 z-[99990] gap-4">
       
       {/* 1. Logo Section */}
-      <div className="relative z-[99992] flex-shrink-0">
+      <div className="relative z-[99992] flex-shrink-0 border-0">
         <Link
           to="/"
-          className="flex gap-2 md:gap-4 items-center hover:scale-105 transition-transform"
+          className="flex gap-2 items-center hover:scale-105 transition-transform"
         >
           <img
-            className="w-10 h-10 md:w-16 md:h-16 rounded-full md:scale-125 object-cover border-2 border-transparent hover:border-yellow-200 transition-all"
+            className="w-10 h-10 md:w-16 md:h-16 rounded-full md:scale-125   transition-all"
             src="/images/logo.png"
             alt="Logo"
           />
           {/* Text is hidden on mobile to make room for Search */}
-          <h1 className="hidden md:block text-xl md:text-2xl font-bold text-white tracking-wide">
+          <h1 className="hidden md:block text-md md:text-xl font-bold text-white ">
             CafeLords
           </h1>
         </Link>
       </div>
 
-      {/* 2. Search Bar - Flexible & Centered */}
       <div className="flex-1 max-w-lg mx-2 z-[99992]">
          <Search />
       </div>
 
-      {/* 3. Desktop Navigation & Auth (Grouped & Hidden on Mobile) */}
       <div className="hidden md:flex items-center gap-4 lg:gap-8 flex-shrink-0">
         <nav className="flex gap-4 lg:gap-8 items-center">
           <MagneticLink to="/">Home</MagneticLink>
