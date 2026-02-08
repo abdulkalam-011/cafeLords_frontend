@@ -1,6 +1,6 @@
 import { Suspense, useEffect } from "react";
 import "./App.css";
-import Loader from "./components/Loader";
+import Loader from "./components/ui/Loader";
 import { lazy } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { useSelector } from "react-redux";

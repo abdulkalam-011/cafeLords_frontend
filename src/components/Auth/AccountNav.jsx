@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { logout } from "../features/auth/authSlice";
+import { logout } from "../../features/auth/authSlice";
 import { FaUser } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { IoMdLogOut } from "react-icons/io";
@@ -16,7 +16,6 @@ const AccountNav = () => {
 
   return (
     <div className="p-2 flex gap-6">
-
       <Link to="/cart" className="flex flex-col items-center">
         <FaShoppingCart />
         <p>Cart</p>

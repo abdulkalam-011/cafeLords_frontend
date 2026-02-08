@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router";
 import { toast, ToastContainer } from "react-toastify";
 import { addToCart } from "../features/cart/cartSlice";
-import ProductCard from "../components/ProductCard";
-import SkeletonCard from "../components/SkeletonCard";
+import ProductCard from "../components/ui/ProductCard";
+import SkeletonCard from "../components/ui/SkeletonCard";
 
 const ProductPage = () => {
   const dispatch = useDispatch();
@@ -254,11 +254,13 @@ const ProductPage = () => {
                   </div>
                 ))} */}
                 {relatedItems.map((relItem) => {
-                   return <div key={relItem.id} className="w-full h-full text-black">
-                    <Suspense fallback={<SkeletonCard />}>
-                      <ProductCard product={relItem} />
-                    </Suspense>
-                  </div>;
+                  return (
+                    <div key={relItem.id} className="w-full h-full text-black">
+                      <Suspense fallback={<SkeletonCard />}>
+                        <ProductCard product={relItem} />
+                      </Suspense>
+                    </div>
+                  );
                 })}
               </div>
             </div>

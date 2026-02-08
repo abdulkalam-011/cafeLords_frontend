@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { HiMenuAlt3, HiX } from "react-icons/hi"; 
+import { HiMenuAlt3, HiX } from "react-icons/hi";
 import gsap from "gsap";
-import LoginButton from "../components/LoginButton";
-import AccountNav from "../components/AccountNav";
+import LoginButton from "../components/Auth/LoginButton";
+import AccountNav from "../components/Auth/AccountNav";
 import MagneticLink from "../components/ui/MagneticLink";
-import Search from "../components/Search";
+import Search from "../components/ui/Search";
 
 const Header = () => {
   const { isAuthenticated } = useSelector((state) => state.auth);
@@ -18,12 +18,12 @@ const Header = () => {
       gsap.fromTo(
         mobileMenuRef.current,
         { y: "-100%", opacity: 0 },
-        { y: "0%", opacity: 1, duration: 0.5, ease: "power3.out" }
+        { y: "0%", opacity: 1, duration: 0.5, ease: "power3.out" },
       );
       gsap.fromTo(
         ".mobile-link",
         { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.4, stagger: 0.1, delay: 0.2 }
+        { y: 0, opacity: 1, duration: 0.4, stagger: 0.1, delay: 0.2 },
       );
     }
   }, [isMobileMenuOpen]);
@@ -32,7 +32,6 @@ const Header = () => {
 
   return (
     <header className="h-[10vh] flex justify-between items-center py-4 px-4 md:px-10 shadow-md bg-theme-dark sticky top-0 z-[99990] gap-4">
-      
       {/* 1. Logo Section */}
       <div className="relative z-[99992] flex-shrink-0 border-0">
         <Link
@@ -52,7 +51,7 @@ const Header = () => {
       </div>
 
       <div className="flex-1 max-w-lg mx-2 z-[99992]">
-         <Search />
+        <Search />
       </div>
 
       <div className="hidden md:flex items-center gap-4 lg:gap-8 flex-shrink-0">
@@ -61,7 +60,7 @@ const Header = () => {
           <MagneticLink to="/menu">Menu</MagneticLink>
           <MagneticLink to="/about">About Us</MagneticLink>
         </nav>
-        
+
         <div>
           {isAuthenticated ? (
             <AccountNav />

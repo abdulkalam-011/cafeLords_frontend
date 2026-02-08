@@ -9,7 +9,7 @@ const ShimmerCard = () => {
      
       <h2 className="text-2xl m-4 my-3 w-[50%] bg-gray-200 rounded-xl h-5 "></h2>
       <p className="m-4 text-xl  font-semibold  duration-200 ease price w-[50%] h-5  flex gap-2"><span className='w-16 h-5 bg-gray-200 rounded-xl'></span> <span className='w-12 h-5 bg-gray-200 rounded-xl'></span></p>
-      <p className="px-4 text-xl  font-semibold text-green-500 mt-2 w-[35%] bg-gray-200 h-5 rounded-xl mt-10 m-4"></p>
+      <p className="px-4 text-xl  font-semibold text-green-500 mt-2 w-[35%] bg-gray-200 h-5 rounded-xl  m-4"></p>
        <div  className="w-16 h-16 flex justify-center items-center absolute bottom-3 right-3 bg-gray-200 rounded-full text-3xl">
        
       </div>

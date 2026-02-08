@@ -1,15 +1,21 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router";
 import Home from "../pages/Home";
-import Loader from "../components/Loader";
+import Loader from "../components/ui/Loader";
 import SearchResults from "../pages/SearchResult";
 
-const ProtectedRoutes = lazy(()=> import("./ProtectedRoutes"));
-const PersonalInfo = lazy(()=>import("../components/ProfileDrawer/PersonalInfo")) ;
-const SavedAdress = lazy(()=> import("../components/ProfileDrawer/SavedAdress"));
-const Orders = lazy(()=> import("../components/ProfileDrawer/Orders")) ;
-const Reviews = lazy(()=> import( "../components/ProfileDrawer/Reviews"));
-const Notificaltion = lazy(()=>import( "../components/ProfileDrawer/Notificaltion"));
+const ProtectedRoutes = lazy(() => import("./ProtectedRoutes"));
+const PersonalInfo = lazy(
+  () => import("../components/ProfileDrawer/PersonalInfo"),
+);
+const SavedAdress = lazy(
+  () => import("../components/ProfileDrawer/SavedAdress"),
+);
+const Orders = lazy(() => import("../components/ProfileDrawer/Orders"));
+const Reviews = lazy(() => import("../components/ProfileDrawer/Reviews"));
+const Notificaltion = lazy(
+  () => import("../components/ProfileDrawer/Notificaltion"),
+);
 
 const Menu = lazy(() => import("../pages/Menu"));
 const About = lazy(() => import("../pages/About"));
@@ -67,7 +73,7 @@ const UserRoutes = () => {
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        
+
         {/* Dynamic Product Route */}
         <Route path="/:product" element={<ProductPage />} />
 
@@ -76,15 +82,15 @@ const UserRoutes = () => {
 
         {/* Protected Routes */}
         <Route element={<ProtectedRoutes />}>
-           <Route path="/profile" element={<Profile />}>
-              <Route path="personal-info" element={<PersonalInfo />} />
-              <Route path="address" element={<SavedAdress />} />
-              <Route path="orders" element={<Orders />} />
-              <Route path="reviews" element={<Reviews />} />
-              <Route path="notifications" element={<Notificaltion />} />
-           </Route>
-           <Route path="/cart" element={<Cart />} />
-           <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/profile" element={<Profile />}>
+            <Route path="personal-info" element={<PersonalInfo />} />
+            <Route path="address" element={<SavedAdress />} />
+            <Route path="orders" element={<Orders />} />
+            <Route path="reviews" element={<Reviews />} />
+            <Route path="notifications" element={<Notificaltion />} />
+          </Route>
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/wishlist" element={<Wishlist />} />
         </Route>
 
         <Route path="*" element={<NotFound />} />

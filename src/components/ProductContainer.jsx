@@ -1,7 +1,6 @@
-import ProductCard from "./ProductCard";
+import ProductCard from "./ui/ProductCard";
 
 const ProductContainer = ({ productTagTitle, data }) => {
-  
   // UI
   return (
     <>
@@ -11,9 +10,9 @@ const ProductContainer = ({ productTagTitle, data }) => {
         </h1>
         <div className="flex  overflow-x-auto whitespace-nowrap mt-2">
           <div className="flex gap-2 justify-start items-baseline-last">
-          {data.map((item) => (
-            <ProductCard key={item.id} product={item} />
-          ))}
+            {data.map((item) => (
+              <ProductCard key={item.id} product={item} />
+            ))}
           </div>
         </div>
       </div>
